@@ -1,6 +1,5 @@
 package Mastery;
 
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -36,8 +35,9 @@ public class BreakAPlate {
     private void initialize() {
         frame = new JFrame("Break A Plate Game");
         frame.getContentPane().setBackground(new Color(255, 255, 255));
-        frame.setBounds(100, 100, 600, 400); // bigger window so everything shows
+        frame.setBounds(100, 100, 600, 400);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.getContentPane().setLayout(null);
 
         // images
         ImageIcon plates = new ImageIcon(getClass().getResource("/Images/plates.gif"));
@@ -48,26 +48,33 @@ public class BreakAPlate {
 
         platesLabel = new JLabel(plates);
         platesLabel.setBounds(0, -45, 584, 227);
+
         prizeLabel = new JLabel();
         prizeLabel.setBounds(239, 217, 122, 111);
 
-        // button
+        // button with Play/Play Again logic
         playButton = new JButton("Play");
-        playButton.setBounds(239, 159, 111, 23);
+        playButton.setBounds(239, 152, 122, 30);
         playButton.addActionListener(e -> {
+            String currentText = playButton.getText();
             Random rand = new Random();
-            int result = rand.nextInt(2); // 0 or 1
 
-            if (result == 0) {
-                platesLabel.setIcon(platesTwoBroken);
-                prizeLabel.setIcon(sticker);
-            } else {
-                platesLabel.setIcon(platesAllBroken);
-                prizeLabel.setIcon(tiger);
+            if (currentText.equals("Play")) {
+                int result = rand.nextInt(2); // 0 or 1
+                if (result == 0) {
+                    platesLabel.setIcon(platesTwoBroken);
+                    prizeLabel.setIcon(sticker);
+                } else {
+                    platesLabel.setIcon(platesAllBroken);
+                    prizeLabel.setIcon(tiger);
+                }
+                playButton.setText("Play Again");
+            } else { // "Play Again"
+                platesLabel.setIcon(plates);   // reset plates
+                prizeLabel.setIcon(null);      // clear prize
+                playButton.setText("Play");    // back to Play
             }
-            playButton.setText("Play Again");
         });
-        frame.getContentPane().setLayout(null);
 
         frame.getContentPane().add(playButton);
         frame.getContentPane().add(platesLabel);

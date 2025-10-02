@@ -9,7 +9,8 @@ import java.util.Random;
 public class Roll {
 
     private JFrame frame;
-    private JLabel Image;
+    private JLabel dice1Label;
+    private JLabel dice2Label;
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -29,29 +30,38 @@ public class Roll {
     }
 
     private void initialize() {
-        frame = new JFrame();
-        frame.setBounds(100, 100, 260, 368);
+        frame = new JFrame("Roll Dice");
+        frame.setBounds(100, 100, 500, 350); // wider to fit 2 dice
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
 
-        Image = new JLabel();
-        Image.setBounds(10, 11, 225, 225);
-        frame.getContentPane().add(Image);
+        // first die
+        dice1Label = new JLabel();
+        dice1Label.setBounds(20, 20, 225, 225); // 225x225 size
+        frame.getContentPane().add(dice1Label);
 
-        JButton btnNewButton = new JButton("Roll Die");
-        btnNewButton.setFont(new Font("Tahoma", Font.BOLD, 13));
-        btnNewButton.setBounds(72, 247, 101, 32);
-        frame.getContentPane().add(btnNewButton);
+        // second die
+        dice2Label = new JLabel();
+        dice2Label.setBounds(250, 20, 225, 225); // placed beside first die
+        frame.getContentPane().add(dice2Label);
 
-        // Get random number between 1-6
-        btnNewButton.addActionListener(new ActionListener() {
+        JButton btnRoll = new JButton("Roll Dice");
+        btnRoll.setFont(new Font("Tahoma", Font.BOLD, 14));
+        btnRoll.setBounds(180, 260, 140, 40); // centered under dice
+        frame.getContentPane().add(btnRoll);
+
+        btnRoll.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 Random rand = new Random();
-                int newRoll = rand.nextInt(6) + 1; // 1–6
 
-                // Build path string like your Demo314
-                String path = "../Chapter10/src/Images/Dice_" + newRoll + ".png";
-                Image.setIcon(new ImageIcon(path));
+                int roll1 = rand.nextInt(6) + 1; // 1–6
+                int roll2 = rand.nextInt(6) + 1; // 1–6
+
+                String path1 = "../Chapter10/src/Images/Dice_" + roll1 + ".png";
+                String path2 = "../Chapter10/src/Images/Dice_" + roll2 + ".png";
+
+                dice1Label.setIcon(new ImageIcon(path1));
+                dice2Label.setIcon(new ImageIcon(path2));
             }
         });
     }
