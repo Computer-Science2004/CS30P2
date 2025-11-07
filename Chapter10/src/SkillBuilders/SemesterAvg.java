@@ -1,4 +1,4 @@
-package Skillbuilders;
+package SkillBuilders;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
