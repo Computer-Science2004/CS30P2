@@ -1,0 +1,3 @@
+Name: Hielan Lee-Tremblay, Grade: 11, Semester: 2, Grades: 67.0, 65.0, 67.0, 87.0, Average: 71.5
+Name: rhr, Grade: 1, Semester: 2, Grades: 23.0, 34.0, 45.0, 56.0, Average: 39.5
+Name: Hean, Grade: 11, Semester: 2, Grades: 34.0, 56.0, 87.0, 98.0, Average: 68.75

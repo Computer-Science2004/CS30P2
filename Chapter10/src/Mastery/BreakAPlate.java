@@ -44,6 +44,7 @@ public class BreakAPlate {
         });
     }
 
+    
     // BreakAPlate method calls the initialize method to make the window
     public BreakAPlate() { 
         initialize();
