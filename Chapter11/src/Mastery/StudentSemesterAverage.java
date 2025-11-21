@@ -190,7 +190,7 @@ public class StudentSemesterAverage
         	// try runs code catch is for the errors
             try
             {
-            	// Information entered by the user
+                // Information entered by the user
                 String name = studentNameText.getText();
                 String grade = gradeLevelText.getText();
                 String sem = semesterNumberText.getText();
@@ -207,15 +207,20 @@ public class StudentSemesterAverage
                 // Displays the average rounded to 2 decimal places
                 averageDisplay.setText(String.format("%.2f", avg));
 
-                // Creates the studentData.txt file (true so that old data is not deleted)
+                /* Creates the studentData.txt file (true so that old data is not deleted)
+                FileWriter is a class that writes text to a file */
                 FileWriter writer = new FileWriter(FILE_NAME, true);
 
+                /* writer.write takes Strings and writes it to a file.
+                All of the information given by the user is displayed with \n at the end to create a new                         
+                Line for each entry */
                 writer.write("Name: " + name + ", Grade: " + grade +
                              ", Semester: " + sem +
                              ", Grades: " + g1 + ", " + g2 + ", " + g3 + ", " + g4 +
                              ", Average: " + avg + "\n");
 
-                writer.close();
+                // Saves everything and closes the file
+                writer.close(); 
 
                 // Message telling the user there data was saved
                 JOptionPane.showMessageDialog(frame, "Data saved successfully!");
@@ -255,3 +260,4 @@ public class StudentSemesterAverage
         });
     }
 }
+

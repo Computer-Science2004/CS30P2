@@ -1,44 +1,68 @@
 package Skillbuilders;
 
 import javax.swing.JPanel;
+import javax.swing.JLabel;
 import javax.swing.JTextField;
-import java.awt.Font;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
 public class StudentData extends JPanel {
 
-	private static final long serialVersionUID = 1L;
-	private JTextField StudentName;
-	private JTextField StudentScore;
+    private static final long serialVersionUID = 1L;
+    private JTextField nameField;
+    private JTextField scoreField;
 
-	/**
-	 * Create the panel.
-	 */
-	public StudentData() {
-		setLayout(null);
-		
-		StudentName = new JTextField();
-		StudentName.setBounds(0, 0, 400, 35);
-		StudentName.setFont(new Font("Tahoma", Font.BOLD, 15));
-		StudentName.setText("Enter student name");
-		add(StudentName);
-		StudentName.setColumns(10);
-		
-		StudentScore = new JTextField();
-		StudentScore.setBounds(0, 40, 400, 40);
-		StudentScore.setFont(new Font("Tahoma", Font.BOLD, 15));
-		StudentScore.setText("Enter student score");
-		StudentScore.setColumns(10);
-		add(StudentScore);
+    public StudentData() {
+        GridBagLayout gridBagLayout = new GridBagLayout();
+        gridBagLayout.columnWidths = new int[]{40, 199, 0};
+        gridBagLayout.rowHeights = new int[]{31, 31, 47, 0};
+        gridBagLayout.columnWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
+        gridBagLayout.rowWeights = new double[]{0.0, 0.0, 0.0, Double.MIN_VALUE};
+        setLayout(gridBagLayout);
 
-	}
+        // Name label
+        JLabel lblName = new JLabel("Name:");
+        GridBagConstraints gbc_lblName = new GridBagConstraints();
+        gbc_lblName.insets = new Insets(0, 0, 5, 5);
+        gbc_lblName.gridx = 0;
+        gbc_lblName.gridy = 0;
+        add(lblName, gbc_lblName);
 
-	public JTextField getStudentName() {
-		return StudentName;
-	}
-	public JTextField getStudentScore() {
-		return StudentScore;
-	}
+        // Name field
+        nameField = new JTextField();
+        GridBagConstraints gbc_nameField = new GridBagConstraints();
+        gbc_nameField.fill = GridBagConstraints.HORIZONTAL;
+        gbc_nameField.insets = new Insets(0, 0, 5, 0);
+        gbc_nameField.gridx = 1;
+        gbc_nameField.gridy = 0;
+        add(nameField, gbc_nameField);
+        nameField.setColumns(10);
+
+        // Score label
+        JLabel lblScore = new JLabel("Score:");
+        GridBagConstraints gbc_lblScore = new GridBagConstraints();
+        gbc_lblScore.insets = new Insets(0, 0, 5, 5);
+        gbc_lblScore.gridx = 0;
+        gbc_lblScore.gridy = 1;
+        add(lblScore, gbc_lblScore);
+
+        // Score field
+        scoreField = new JTextField();
+        GridBagConstraints gbc_scoreField = new GridBagConstraints();
+        gbc_scoreField.fill = GridBagConstraints.HORIZONTAL;
+        gbc_scoreField.insets = new Insets(0, 0, 5, 0);
+        gbc_scoreField.gridx = 1;
+        gbc_scoreField.gridy = 1;
+        add(scoreField, gbc_scoreField);
+        scoreField.setColumns(10);
+    }
+
+    public JTextField getNameField() {
+        return nameField;
+    }
+
+    public JTextField getScoreField() {
+        return scoreField;
+    }
 }

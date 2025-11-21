@@ -1,3 +1,4 @@
-Name: Hielan Lee-Tremblay, Grade: 11, Semester: 2, Grades: 67.0, 65.0, 67.0, 87.0, Average: 71.5
-Name: rhr, Grade: 1, Semester: 2, Grades: 23.0, 34.0, 45.0, 56.0, Average: 39.5
-Name: Hean, Grade: 11, Semester: 2, Grades: 34.0, 56.0, 87.0, 98.0, Average: 68.75
+Name: Hielan Lee-Tremblay, Grade: 12, Semester: 1, Grades: 89.0, 98.0, 78.0, 87.0, Average: 88.0
+Name: Yujin Park, Grade: 12, Semester: 1, Grades: 98.0, 67.0, 87.0, 91.0, Average: 85.75
+Name: Misha stanev, Grade: 12, Semester: 1, Grades: 97.0, 99.0, 99.0, 100.0, Average: 98.75
+Name: Olijioda Olaweeda, Grade: 12, Semester: 1, Grades: 7.0, 56.0, 12.0, 56.0, Average: 32.75
