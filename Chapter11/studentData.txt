@@ -1,4 +1,0 @@
-Name: Hielan Lee-Tremblay, Grade: 12, Semester: 1, Grades: 89.0, 98.0, 78.0, 87.0, Average: 88.0
-Name: Yujin Park, Grade: 12, Semester: 1, Grades: 98.0, 67.0, 87.0, 91.0, Average: 85.75
-Name: Misha stanev, Grade: 12, Semester: 1, Grades: 97.0, 99.0, 99.0, 100.0, Average: 98.75
-Name: Olijioda Olaweeda, Grade: 12, Semester: 1, Grades: 7.0, 56.0, 12.0, 56.0, Average: 32.75
